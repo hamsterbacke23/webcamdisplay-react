@@ -12,7 +12,7 @@ import ReactFitText from 'react-fittext';
 
 import messages from './messages';
 
-import { CenteredSection, Control, TimeDisplay } from './stopwatchStyles';
+import { CenteredSection, Control, TimeDisplay, ControlGroup } from './stopwatchStyles';
 
 const formattedSeconds = (sec) => {
   const secDisplay = `0${(sec % 60)}`;
@@ -28,15 +28,18 @@ function Stopwatch(props) {
         </div>
       </ReactFitText>
 
-      {(props.intervalsElapsed === 0
-        ? <Control onClick={props.startTimer}><FormattedMessage {...messages.start} /></Control>
-        : <Control onClick={props.stopTimer}><FormattedMessage {...messages.stop} /></Control>
-      )}
+      <ControlGroup>
+        {(props.intervalsElapsed !== 0
+          ? <Control onClick={props.resetTimer}><FormattedMessage {...messages.reset} /></Control>
+          : null
+        )}
 
-      {(props.intervalsElapsed !== 0
-        ? <Control onClick={props.resetTimer}><FormattedMessage {...messages.reset} /></Control>
-        : null
-      )}
+        {(props.intervalsElapsed === 0
+          ? <Control onClick={props.startTimer}><FormattedMessage {...messages.start} /></Control>
+          : <Control onClick={props.stopTimer}><FormattedMessage {...messages.stop} /></Control>
+        )}
+
+      </ControlGroup>
 
     </CenteredSection>
   );

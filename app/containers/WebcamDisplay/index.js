@@ -86,9 +86,20 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
       );
     }
 
+    const timerResizeProps = {
+      top: false,
+      right: false,
+      bottom: false,
+      left: false,
+      topRight: true,
+      bottomRight: true,
+      bottomLeft: true,
+      topLeft: true,
+    }
+
     return (
       <div>
-        <DragResize initialWidth="100" initialHeight="120" x={window.innerWidth - 100} y={0} isResizable={false}>
+        <DragResize initialWidth="150" initialHeight="150" x={window.innerWidth - 150} y={0} isResizable={timerResizeProps} lockAspectRatio={true}>
           <Timer />
         </DragResize>
 

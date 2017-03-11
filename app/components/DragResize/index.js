@@ -9,10 +9,12 @@ import React from 'react';
 import BaseLayout from './BaseLayout';
 import StyledRnd from './StyledRnd';
 
+function onResizeStopHandler() {
+  window.dispatchEvent(new Event('resize'));
+}
+
 const DragResize = (props) => {
-  const resizableProps = props.isResizable === false
-   ? { top: false, right: false, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }
-   : undefined;
+
   return (
     <BaseLayout>
       <StyledRnd
@@ -23,8 +25,10 @@ const DragResize = (props) => {
           width: props.initialWidth,
           height: props.initialHeight,
         }}
-        isResizable={resizableProps}
+        isResizable={props.isResizable}
+        lockAspectRatio={props.lockAspectRatio}
         bounds={'parent'}
+        onResizeStop={onResizeStopHandler}
       >
         {props.children}
       </StyledRnd>
