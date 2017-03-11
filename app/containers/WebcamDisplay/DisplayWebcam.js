@@ -6,6 +6,8 @@ import Webcam from 'components/Webcam';
 
 const DisplayWebcamWrapper = styled.div`
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 `;
 
 const CoveredWebcam = styled(Webcam)`

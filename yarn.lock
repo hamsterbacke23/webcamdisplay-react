@@ -6126,6 +6126,10 @@ react-dom@15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-fittext@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-fittext/-/react-fittext-0.0.7.tgz#4866d0930507152a8fc77e32619731453a9e383f"
+
 react-helmet@3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-3.2.2.tgz#1fc4646cbc5d26246ab45d5a84b504ed639810e6"
