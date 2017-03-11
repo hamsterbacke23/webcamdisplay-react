@@ -8,15 +8,23 @@ import {
   RESET,
   START,
   STOP,
-  LAP
+  ADDLAP,
+  TICK,
 } from './constants';
 
-export function startTimer() {
+let timer = null;
+
+export function startTimer(dispatch) {
+  clearInterval(timer);
+  timer = setInterval(() => dispatch(tick()), 1000);
+  dispatch(tick());
+
   return {
     type: START,
   };
 }
 export function stopTimer() {
+  clearInterval(timer);
   return {
     type: STOP,
   };
@@ -30,6 +38,12 @@ export function resetTimer() {
 
 export function addLap() {
   return {
-    type: LAP,
+    type: ADDLAP,
+  };
+}
+
+function tick() {
+  return {
+    type: TICK,
   };
 }

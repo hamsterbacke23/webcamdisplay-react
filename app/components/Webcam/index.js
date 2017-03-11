@@ -17,9 +17,7 @@ const Video = styled.video`
   max-width: 100%;
   max-height: 100%;
   width: 100%;
-  margin: 0 auto;
-  background-color: #666;
-
+  height:100%;
 `;
 
 class Webcam extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
