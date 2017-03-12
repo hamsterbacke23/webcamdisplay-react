@@ -2,7 +2,7 @@
 
 # Defaults
 SERVER_SSLPATH=server/certificates
-CLIENT_SSLPATH=app/certificates
+CLIENT_SSLPATH=electron/certificates
 BASE_PATH=$PWD
 
 while [[ $# -gt 1 ]]
