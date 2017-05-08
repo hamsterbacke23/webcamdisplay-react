@@ -53,15 +53,18 @@
       "output": "dist",
       "buildResources": "buildresources"
     },
-    "extraFiles": [{
-      "from": "build",
-      "filter": ["**/*"]
-    }],
+    "extraFiles": [
+      {
+        "from": "build",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
     "mac": {
       "category": "usability"
     }
   },
-
   "lint-staged": {
     "*.js": "lint:eslint"
   },
@@ -69,7 +72,8 @@
   "babel": {
     "presets": [
       [
-        "latest", {
+        "latest",
+        {
           "es2015": {
             "modules": false
           }
@@ -140,7 +144,8 @@
       "import/prefer-default-export": 0,
       "indent": [
         2,
-        2, {
+        2,
+        {
           "SwitchCase": 1
         }
       ],
