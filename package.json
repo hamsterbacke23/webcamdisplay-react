@@ -22,7 +22,7 @@
     "postinstall": "npm run build:dll",
     "prebuild": "npm run build:clean",
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
-    "build:clean": "npm run test:clean && rimraf ./docs",
+    "build:clean": "npm run test:clean && rimraf ./build",
     "build:dll": "node ./internals/scripts/dependencies.js",
     "start": "cross-env NODE_ENV=development node server",
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
@@ -53,14 +53,12 @@
       "output": "dist",
       "buildResources": "buildresources"
     },
-    "extraFiles": [
-      {
-        "from": "build",
-        "filter": [
-          "**/*"
-        ]
-      }
-    ],
+    "extraFiles": [{
+      "from": "build",
+      "filter": [
+        "**/*"
+      ]
+    }],
     "mac": {
       "category": "usability"
     }
@@ -72,8 +70,7 @@
   "babel": {
     "presets": [
       [
-        "latest",
-        {
+        "latest", {
           "es2015": {
             "modules": false
           }
@@ -144,8 +141,7 @@
       "import/prefer-default-export": 0,
       "indent": [
         2,
-        2,
-        {
+        2, {
           "SwitchCase": 1
         }
       ],
