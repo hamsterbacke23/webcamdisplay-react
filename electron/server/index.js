@@ -38,7 +38,6 @@ const host = customHost || null; // Let http.Server use its default IPv6/4 host
 const prettyHost = customHost || 'localhost';
 const httpsEnabled = argv.httpsEnabled || true;
 const port = argv.port || process.env.PORT || 3000;
-
 const server = httpsEnabled ? https.createServer(credentials, app) : http.createServer(app);
 
 // Start your app.
@@ -54,9 +53,9 @@ server.listen(port, host, (err) => {
         return logger.error(innerErr);
       }
 
-      logger.appStarted(port, prettyHost, url);
+      logger.appStarted(port, prettyHost, httpsEnabled, url);
     });
   } else {
-    logger.appStarted(port, prettyHost);
+    logger.appStarted(port, prettyHost, httpsEnabled);
   }
 });
