@@ -10,10 +10,7 @@
  */
 
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 import WebcamDisplay from 'containers/WebcamDisplay';
 import Section from './Section';
 

@@ -16,7 +16,7 @@ function onResizeStopHandler() {
 const DragResize = (props) => {
 
   return (
-    <BaseLayout>
+    <BaseLayout className={props.className}>
       <StyledRnd
         ref={(c) => { this.rnd = c; }}
         initial={{
