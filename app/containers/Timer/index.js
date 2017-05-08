@@ -14,7 +14,7 @@ import { resetTimer, startTimer, stopTimer, addLap } from './actions';
 
 import { makeSelectIntervalsElapsed } from './selectors';
 
-class Timer extends React.PureComponent {
+class Timer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (

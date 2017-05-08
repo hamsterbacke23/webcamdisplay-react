@@ -40,10 +40,10 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
   startVideo(deviceId) {
     const constraints = {
       video: { width: 1280, height: 720 },
-      deviceId,
+      deviceId: { exact: deviceId },
     };
 
-    navigator.mediaDevices.getUserMedia(constraints)
+    navigator.mediaDevices.getUserMedia({ video: constraints })
       .then(this.startVideoCb.bind(this))
       .catch(this.setNewError.bind(this));
   }
@@ -57,7 +57,7 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
   startWebcams() {
     this.state.devices.forEach((device) => {
       if (device.kind === 'videoinput') {
-        this.startVideo(device.id);
+        this.startVideo(device.deviceId);
       }
     });
   }
@@ -86,20 +86,9 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
       );
     }
 
-    const timerResizeProps = {
-      top: false,
-      right: false,
-      bottom: false,
-      left: false,
-      topRight: true,
-      bottomRight: true,
-      bottomLeft: true,
-      topLeft: true,
-    }
-
     return (
       <div>
-        <DragResize initialWidth="150" initialHeight="150" x={window.innerWidth - 150} y={0} isResizable={timerResizeProps} lockAspectRatio={true}>
+        <DragResize initialWidth="150" initialHeight="150" x={window.innerWidth - 150} y={0} lockAspectRatio>
           <Timer />
         </DragResize>
 

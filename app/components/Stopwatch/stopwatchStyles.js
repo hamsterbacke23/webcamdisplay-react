@@ -7,7 +7,7 @@ export const CenteredSection = styled.div`
 `;
 
 export const TimeDisplay = styled.h1`
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
   color: #fff;
 `;

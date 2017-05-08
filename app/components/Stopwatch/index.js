@@ -8,7 +8,7 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
-import ReactFitText from 'react-fittext';
+import { Textfit } from 'react-textfit';
 
 import messages from './messages';
 
@@ -19,14 +19,16 @@ const formattedSeconds = (sec) => {
   return `${Math.floor(sec / 60)}:${secDisplay.slice(-2)}`;
 };
 
+
 function Stopwatch(props) {
+
   return (
     <CenteredSection>
-      <ReactFitText compressor={0.5}>
-        <div>
-          <TimeDisplay>{formattedSeconds(props.intervalsElapsed)}</TimeDisplay>
-        </div>
-      </ReactFitText>
+      <TimeDisplay>
+        <Textfit mode="single">
+          {formattedSeconds(props.intervalsElapsed)}
+        </Textfit>
+      </TimeDisplay>
 
       <ControlGroup>
         {(props.intervalsElapsed !== 0
