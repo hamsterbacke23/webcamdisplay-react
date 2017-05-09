@@ -2,6 +2,11 @@
 Display all your connected webcams on a single webpage.
 Great for usability testing recordings and screencasts, stopwatch is included.
 
+## Features
+- Resizable and draggable timer
+- Resizable and draggable webcam feeds
+- Works offline
+
 ## Capture
 - use any screensharing app like skype to broadcast 
 - Mac-users can use pre-installed quicktime to capture via "screencast" recording
