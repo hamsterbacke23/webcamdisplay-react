@@ -55,11 +55,17 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
   }
 
   startWebcams() {
+    let videoInputExists = false;
     this.state.devices.forEach((device) => {
       if (device.kind === 'videoinput') {
         this.startVideo(device.deviceId);
+        videoInputExists = true;
       }
     });
+
+    if (!videoInputExists) {
+      this.setNewError({ message: 'No video input found, please connect a webcam.' });
+    }
   }
 
   startDevices() {
@@ -69,16 +75,16 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
   }
 
   render() {
-    if (!this.state || !this.state.streams) {
+    if (!this.state) {
       return null;
     }
-
     if (this.state.errors) {
       return (
         <ul className="errors">
           {this.state.errors.map((error, key) => (
             <li key={key}>
-              {error.message}
+              <p>{error.name}</p>
+              <p>{error.message}</p>
             </li>
             )
           )}
