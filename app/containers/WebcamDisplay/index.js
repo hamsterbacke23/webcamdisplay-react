@@ -80,15 +80,18 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
     }
     if (this.state.errors) {
       return (
-        <ul className="errors">
-          {this.state.errors.map((error, key) => (
-            <li key={key}>
-              <p>{error.name}</p>
-              <p>{error.message}</p>
-            </li>
-            )
-          )}
-        </ul>
+        <div style={{ marginLeft: 20 }}>
+          <h3>Error</h3>
+          <ul className="errors">
+            {this.state.errors.map((error, key) => (
+              <li key={key}>
+                <p>{error.name}</p>
+                <p>{error.message}</p>
+              </li>
+              )
+            )}
+          </ul>
+        </div>
       );
     }
 

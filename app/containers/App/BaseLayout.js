@@ -9,6 +9,8 @@ const BaseLayout = styled.div`
   max-width: 100%;
   background-color: rgba(10,10,10,1);
   background: linear-gradient(to bottom, rgba(50,50,50,1) 0%, rgba(20,20,20,1) 100%);
+  font-family: Arial, Helvetica;
+  color: white;
 `;
 
 export default BaseLayout;
