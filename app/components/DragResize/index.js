@@ -38,10 +38,10 @@ DragResize.propTypes = {
   y: PropTypes.number.isRequired,
   initialHeight: PropTypes.number.isRequired,
   initialWidth: PropTypes.number.isRequired,
-  isResizable: PropTypes.boolean.isRequired,
-  lockAspectRatio: PropTypes.boolean.isRequired,
+  isResizable: PropTypes.bool,
+  lockAspectRatio: PropTypes.bool,
   className: PropTypes.string,
-  children: PropTypes.objcet,
+  children: PropTypes.object,
 };
 
 

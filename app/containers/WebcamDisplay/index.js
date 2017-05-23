@@ -94,12 +94,12 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
 
     return (
       <div>
-        <DragResize initialWidth="150" initialHeight="150" x={window.innerWidth - 150} y={0} lockAspectRatio>
+        <DragResize initialWidth={150} initialHeight={150} x={window.innerWidth - 150} y={0} lockAspectRatio>
           <Timer />
         </DragResize>
 
         {this.state.streams.map((stream, key) => (
-          <DragResize key={key} initialWidth="400" initialHeight="300" x={(window.innerWidth / 2) - 200} y={(window.innerHeight / 2) - 150}>
+          <DragResize key={key} initialWidth={400} initialHeight={300} x={(window.innerWidth / 2) - 200} y={(window.innerHeight / 2) - 150}>
             <DisplayWebcam srcObject={stream} />
           </DragResize>
           )
