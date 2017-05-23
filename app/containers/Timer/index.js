@@ -9,10 +9,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Stopwatch from 'components/Stopwatch';
-import { resetTimer, startTimer, stopTimer, addLap } from './actions';
+import { resetTimer, startTimer, pauseTimer } from './actions';
 
 
-import { makeSelectIntervalsElapsed } from './selectors';
+import { makeSelectIsPaused, makeSelectIntervalsElapsed } from './selectors';
 
 class Timer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -22,8 +22,9 @@ class Timer extends React.PureComponent { // eslint-disable-line react/prefer-st
         <Stopwatch
           intervalsElapsed={this.props.intervalsElapsed}
           startTimer={this.props.startTimer}
-          stopTimer={this.props.stopTimer}
+          pauseTimer={this.props.pauseTimer}
           resetTimer={this.props.resetTimer}
+          isPaused={this.props.isPaused}
         />
       </div>
     );
@@ -34,21 +35,22 @@ class Timer extends React.PureComponent { // eslint-disable-line react/prefer-st
 Timer.propTypes = {
   resetTimer: PropTypes.func.isRequired,
   startTimer: PropTypes.func.isRequired,
-  stopTimer: PropTypes.func.isRequired,
+  pauseTimer: PropTypes.func.isRequired,
   intervalsElapsed: PropTypes.number,
+  isPaused: PropTypes.bool,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
     startTimer: () => dispatch(startTimer(dispatch)),
-    stopTimer: () => dispatch(stopTimer()),
+    pauseTimer: () => dispatch(pauseTimer()),
     resetTimer: () => dispatch(resetTimer()),
-    lapTimer: () => dispatch(addLap()),
   };
 }
 
 const mapStateToProps = createStructuredSelector({
   intervalsElapsed: makeSelectIntervalsElapsed(),
+  isPaused: makeSelectIsPaused(),
 });
 
 

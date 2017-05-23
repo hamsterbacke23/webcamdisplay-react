@@ -7,13 +7,14 @@
 import { fromJS } from 'immutable';
 import {
   RESET,
-  ADDLAP,
   TICK,
+  START,
+  PAUSE,
 } from './constants';
 
 const initialState = fromJS({
   intervalsElapsed: 0,
-  laps: [],
+  isPaused: false,
   lastClearedIncrementer: null,
 });
 
@@ -23,13 +24,14 @@ function timerReducer(state = initialState, action) {
     case RESET: {
       return state.set('intervalsElapsed', 0);
     }
+    case START: {
+      return state.set('isPaused', false);
+    }
+    case PAUSE: {
+      return state.set('isPaused', true);
+    }
     case TICK: {
       return state.set('intervalsElapsed', state.get('intervalsElapsed') + 1);
-    }
-    case ADDLAP: {
-      const laps = state.laps.slice();
-      laps.push(this.state.intervalsElapsed);
-      return state.set('laps', laps);
     }
     default: {
       return state;

@@ -11,7 +11,13 @@ const makeSelectIntervalsElapsed = () => createSelector(
   (timerState) => timerState.get('intervalsElapsed')
 );
 
+const makeSelectIsPaused = () => createSelector(
+  selectTimer,
+  (timerState) => timerState.get('isPaused')
+);
+
 export {
   selectTimer,
   makeSelectIntervalsElapsed,
+  makeSelectIsPaused,
 };

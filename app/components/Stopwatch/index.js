@@ -4,7 +4,7 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -21,7 +21,6 @@ const formattedSeconds = (sec) => {
 
 
 function Stopwatch(props) {
-
   return (
     <CenteredSection>
       <TimeDisplay>
@@ -31,14 +30,19 @@ function Stopwatch(props) {
       </TimeDisplay>
 
       <ControlGroup>
-        {(props.intervalsElapsed !== 0
+        {(props.intervalsElapsed !== 0 && props.isPaused
           ? <Control onClick={props.resetTimer}><FormattedMessage {...messages.reset} /></Control>
           : null
         )}
 
-        {(props.intervalsElapsed === 0
+        {(props.isPaused || props.intervalsElapsed === 0
           ? <Control onClick={props.startTimer}><FormattedMessage {...messages.start} /></Control>
-          : <Control onClick={props.stopTimer}><FormattedMessage {...messages.stop} /></Control>
+          : ''
+        )}
+
+        {(!props.isPaused && props.intervalsElapsed !== 0
+          ? <Control onClick={props.pauseTimer}><FormattedMessage {...messages.stop} /></Control>
+          : ''
         )}
 
       </ControlGroup>
@@ -48,7 +52,11 @@ function Stopwatch(props) {
 }
 
 Stopwatch.propTypes = {
-
+  resetTimer: PropTypes.func.isRequired,
+  startTimer: PropTypes.func.isRequired,
+  pauseTimer: PropTypes.func.isRequired,
+  intervalsElapsed: PropTypes.number,
+  isPaused: PropTypes.bool,
 };
 
 export default Stopwatch;

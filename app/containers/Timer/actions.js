@@ -7,8 +7,7 @@
 import {
   RESET,
   START,
-  STOP,
-  ADDLAP,
+  PAUSE,
   TICK,
 } from './constants';
 
@@ -23,10 +22,10 @@ export function startTimer(dispatch) {
     type: START,
   };
 }
-export function stopTimer() {
+export function pauseTimer() {
   clearInterval(timer);
   return {
-    type: STOP,
+    type: PAUSE,
   };
 }
 
@@ -36,11 +35,6 @@ export function resetTimer() {
   };
 }
 
-export function addLap() {
-  return {
-    type: ADDLAP,
-  };
-}
 
 function tick() {
   return {
