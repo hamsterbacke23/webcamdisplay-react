@@ -69,6 +69,10 @@ export class WebcamDisplay extends React.PureComponent { // eslint-disable-line 
   }
 
   startDevices() {
+    if (!navigator || !navigator.mediaDevices) {
+      this.setNewError('Sorry, navigator or navigator.mediaDevices does not seem to be available in this browser!');
+      return;
+    }
     navigator.mediaDevices.enumerateDevices()
       .then(this.setDevices.bind(this))
       .catch(this.setNewError.bind(this));
