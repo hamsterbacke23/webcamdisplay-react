@@ -2,6 +2,10 @@
 Display all your connected webcams on a single webpage.
 Great for usability testing recordings and screencasts, stopwatch is included.
 
+## Requirements
+- A connected webcam / videoinput (wow!)
+- A modern browser with [mediaDevices Web API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)
+
 ## Features
 - Resizable and draggable timer
 - Resizable and draggable webcam feeds
