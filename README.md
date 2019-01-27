@@ -15,6 +15,9 @@ Great for usability testing recordings and screencasts, stopwatch is included.
 - use any screensharing app like skype to broadcast 
 - Mac-users can use pre-installed quicktime to capture via "screencast" recording
 
+## Getting started
+First clone the repository, then run `npm install`;
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
