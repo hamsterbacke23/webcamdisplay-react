@@ -9,6 +9,15 @@
     padding-top: 25px;
 }
 
+.wrapper .display-close {
+    opacity: 0;
+    transition: opacity ease 1s;
+}
+
+.wrapper:hover .display-close {
+    opacity: 1;
+}
+
 .timedisplay {
     margin: 0;
     color: #fff;

@@ -104,7 +104,7 @@ class Timer extends React.PureComponent {
 
     return (
       <div className="wrapper">
-      <CloseButton href="#" onClick={() => this.dispatch(this.hide())}>×</CloseButton>
+      <CloseButton className="display-close" onClick={() => this.dispatch(this.hide())}>×</CloseButton>
         <div className="timedisplay">
           <FitText minFontSize={24} parent={this.parentNode} compressor={0.3}>
             {formattedSeconds(intervalsElapsed)}

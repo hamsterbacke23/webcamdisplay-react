@@ -30,7 +30,7 @@ class Webcam extends React.PureComponent {
     }
     return (
       <div className="resize-wrapper">
-        <CloseButton onClick={this.hide} />
+        <CloseButton onClick={this.hide} className="display-close" />
         <video ref="webcam" className={this.props.className} autoPlay />
       </div>
     );
