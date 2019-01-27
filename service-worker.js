@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/webcamdisplay-react/precache-manifest.2704a2a439905aa01e6e6a0a256aaeb7.js"
+  "/webcamdisplay-react/precache-manifest.4544209b09ceb882abba2359374cb3cb.js"
 );
 
 workbox.clientsClaim();
