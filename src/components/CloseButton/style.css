@@ -1,0 +1,14 @@
+a {
+    display: block;
+    box-sizing: border-box;
+    text-align: right;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+}

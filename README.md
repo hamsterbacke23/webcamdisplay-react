@@ -15,17 +15,25 @@ Great for usability testing recordings and screencasts, stopwatch is included.
 - use any screensharing app like skype to broadcast 
 - Mac-users can use pre-installed quicktime to capture via "screencast" recording
 
-## Tech
-- Based on the awesome [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
-- Also includes a workflow for [electron](https://electron.atom.io/)
+### `npm start`
 
-## Demo
-See it working in action: [Click here](https://hamsterbacke23.github.io/webcamdisplay-react/)
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Local
-1) Clone it 
-2) run it
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-```yarn install```
-```npm start```
+### `npm test`
 
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
